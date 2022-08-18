@@ -1,14 +1,21 @@
 #!/bin/bash
-
 #Update and Upgrade System
 sudo apt update -y
 sudo apt upgrade -y
 
-#Install Nala
-echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
-wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
-
+#Install & Config Nala
 sudo apt isntall Nala -y
-
-#Config Nala
 sudo nala fetch --auto
+
+sudo nala install 
+sudo echo "apt() { command nala "$@"} sudo() {if [ "$1" = "apt" ]; then shift command sudo nala "$@" else command sudo "$@" fi}" >> ~/.bashrc
+sudo echo "apt() { command nala "$@"} sudo() {if [ "$1" = "apt" ]; then shift command sudo nala "$@" else command sudo "$@" fi}" >> /root/.bashrc
+
+#Install Flatpak
+sudo nala install flatpak
+sudo nala install gnome-software-plugin-flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+#Install Programs
+sudo nala install steam discord firefox openoffice
+flatpak install flathub com.obsproject.Studio
