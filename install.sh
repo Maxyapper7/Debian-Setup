@@ -17,5 +17,7 @@ sudo nala install gnome-software-plugin-flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 #Install Programs
-sudo nala install steam discord firefox openoffice
-flatpak install flathub com.obsproject.Studio
+sudo nala install steam discord firefox openoffice gnome-tweaks  -y
+flatpak install flathub com.obsproject.Studio -y
+
+echo "Done With Instalation Please Reboot"
