@@ -5,25 +5,37 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-#Update and Upgrade System
-sudo apt update -y
-sudo apt upgrade -y
+echo Hello, This is a debain install
+echo Are you on a framework?
+read -p 'y or n: ' frame
+echo Do you have a Nvidia Card? '('Note only works for current GeForce/Quadro/Tesla models')'
+read -p 'y or n: ' nvidia
+echo Do you want Full Or None?
+read -p 'f, or n: ' packages
+echo Do you want sid '(unstable)' debain?
+read -p 'y, or n: ' branch
 
-#Install & Config Nala
-sudo apt install Nala -y
-sudo nala fetch --auto
 
-sudo nala install 
-sudo echo "apt() { command nala "$@"} sudo() {if [ "$1" = "apt" ]; then shift command sudo nala "$@" else command sudo "$@" fi}" >> ~/.bashrc
-sudo echo "apt() { command nala "$@"} sudo() {if [ "$1" = "apt" ]; then shift command sudo nala "$@" else command sudo "$@" fi}" >> /root/.bashrc
 
-#Install Flatpak
-sudo nala install flatpak
-sudo nala install gnome-software-plugin-flatpak
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+if [ $frame == 'y' ]
+  then
+  bash framework.sh
+fi
 
-#Install Programs
-flatpak install flathub com.obsproject.Studio com.valvesoftware.Steam net.davidotek.pupgui2 com.visualstudio.code com.discordapp.Discord net.lutris.Lutris com.usebottles.bottles us.zoom.Zoom org.onlyoffice.desktopeditors org.videolan.VLC com.github.muriloventuroso.easyssh -y
-flatpak install flathub com.google.Chrome org.mozilla.firefox org.polymc.PolyMC -y
+if [ $nvidia == 'y' ]
+  then
+  sudo bash nvidia.sh
+fi
 
-echo "Done With Instalation Please Reboot"
+if [ $packages == 'f' ]
+  then
+  sudo bash full.sh
+fi
+
+if [ $branch == 'y' ]
+  then
+  sudo bash branch.sh
+fi
+
+echo Done with install, please restart soon
+  
