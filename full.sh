@@ -24,6 +24,7 @@ apt install ./discord.deb
 
 
 # Config Nala
+# Note that nala might not be installed
 echo 'apt() {'  >> .bashrc
 echo   'command nala "$@"' >> .bashrc
 echo '}' >> .bashrc
@@ -58,3 +59,7 @@ echo 'if [ -f ~/.bash_aliases ]; then' >> .bashrc
 echo . /home/max/.bash_aliases >> .bashrc
 echo fi  >> .bashrc
 echo '' >> .bashrc
+
+# Move Dotfiles
+#git clone https://github.com/Maxyapper7/gnome-dotfiles.git
+

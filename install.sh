@@ -5,8 +5,7 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-echo Hello, This is a debain install
-echo Are you on a framework?
+echo Hello, This is a debain \ Are you on a framework?
 read -p 'y or n: ' frame
 echo Do you have a Nvidia Card?
 read -p 'y or n: ' nvidia
