@@ -6,6 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 echo Hello, This is a post debian install script
+echo
 echo Are you on a framework?
 read -p 'y or n: ' frame
 echo Do you have a Nvidia Card?
@@ -17,7 +18,7 @@ read -p 'y, or n: ' gnomeapps
 
 if [ $gnomeapps == 'y' ]
   then
-  apt remove gnome-2048 aisleriot gnome-calendar gnome-characters gnome-chess gnome-clocks gnome-color-manager gnome-contacts baobab simple-scan evince gnome-documents evolution gnome-shell-extension-prefs five-or-more
+  apt remove gnome-2048 aisleriot gnome-calendar gnome-characters gnome-chess gnome-clocks gnome-color-manager gnome-contacts baobab simple-scan evince gnome-documents evolution gnome-shell-extension-prefs five-or-more -y
 fi
 apt update -y
 apt upgrade -y
@@ -29,7 +30,7 @@ fi
 
 if [ $nvidia == 'y' ]
   then
-  apt install nvidia-driver
+  apt install nvidia-driver -y
 fi
 
 if [ $packages == 'f' ]
@@ -37,7 +38,6 @@ if [ $packages == 'f' ]
   bash full.sh
 fi
 
-
-
+clear
 echo Done with install, please restart soon
   

@@ -15,7 +15,7 @@ apt install vlc audacity filezilla btop
 
 #Steam
 wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
-apt install ./steam.deb
+apt install ./steam.deb -y
 
 #Chrome
 
