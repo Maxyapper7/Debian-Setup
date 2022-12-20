@@ -40,8 +40,9 @@ echo '' >> .bashrc
 nala fetch --auto
 
 # Install Aliases
-mv .bash_aliases ~/.bash_aliases
+cp .bash_aliases ~/.bash_aliases
 
+echo '' >> .bashrc
 echo 'if [ -f ~/.bash_aliases ]; then' >> .bashrc
 echo . /home/max/.bash_aliases >> .bashrc
 echo fi  >> .bashrc
