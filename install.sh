@@ -5,7 +5,8 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-echo Hello, This is a debain \ Are you on a framework?
+echo Hello, This is a post debian install script
+echo Are you on a framework?
 read -p 'y or n: ' frame
 echo Do you have a Nvidia Card?
 read -p 'y or n: ' nvidia
@@ -13,8 +14,6 @@ echo Do you want Full Or None?
 read -p 'f, or n: ' packages
 echo Do you want to remove most gnome apps?
 read -p 'y, or n: ' gnomeapps
-echo Do you want sid '(unstable)' debain?
-read -p 'y, or n: ' branch
 
 if [ $gnomeapps == 'y' ]
   then
@@ -38,10 +37,6 @@ if [ $packages == 'f' ]
   bash full.sh
 fi
 
-if [ $branch == 'y' ]
-  then
-  bash branch.sh
-fi
 
 
 echo Done with install, please restart soon

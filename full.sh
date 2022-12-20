@@ -9,7 +9,7 @@ apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
 
 # Install apps
-flatpak install -y flathub org.polymc.PolyMC com.github.muriloventuroso.easyssh net.davidotek.pupgui2 org.onlyoffice.desktopeditors us.zoom.Zoom com.mattjakeman.ExtensionManager com.obsproject.Studio io.github.shiftey.Desktop
+flatpak install -y flathub org.polymc.PolyMC com.github.muriloventuroso.easyssh net.davidotek.pupgui2 org.onlyoffice.desktopeditors us.zoom.Zoom com.mattjakeman.ExtensionManager com.obsproject.Studio io.github.shiftey.Desktop com.discordapp.Discord
 
 apt install vlc audacity filezilla btop
 
@@ -17,14 +17,13 @@ apt install vlc audacity filezilla btop
 wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
 apt install ./steam.deb
 
-#Discord
-apt install ./discord.deb
-
 #Chrome
 
+### Nala ###
+# Install Nala
+apt install nala
 
 # Config Nala
-# Note that nala might not be installed
 echo 'apt() {'  >> .bashrc
 echo   'command nala "$@"' >> .bashrc
 echo '}' >> .bashrc
@@ -38,19 +37,7 @@ echo   'fi' >> .bashrc
 echo '}' >> .bashrc
 echo '' >> .bashrc
 
-echo 'apt() {'  >> /root/.bashrc
-echo   'command nala "$@"' >> /root/.bashrc
-echo '}' >> /root/.bashrc
-echo 'sudo() {' >> /root/.bashrc
-echo   'if [ "$1" = "apt" ]; then' >> /root/.bashrc
-echo     'shift' >> /root/.bashrc
-echo     'command sudo nala "$@"' >> /root/.bashrc
-echo   'else' >> /root/.bashrc
-echo     'command sudo "$@"' >> /root/.bashrc
-echo   'fi' >> /root/.bashrc
-echo '}' >> /root/.bashrc
-echo '' >> /root/.bashrc
-
+nala fetch --auto
 
 # Install Aliases
 mv .bash_aliases ~/.bash_aliases
