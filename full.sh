@@ -6,12 +6,12 @@ apt upgrade -y
 # Install flatpak
 apt install flatpak -y
 apt install gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Install apps
 flatpak install -y flathub org.polymc.PolyMC com.github.muriloventuroso.easyssh net.davidotek.pupgui2 org.onlyoffice.desktopeditors us.zoom.Zoom com.mattjakeman.ExtensionManager com.obsproject.Studio io.github.shiftey.Desktop com.discordapp.Discord
 
-apt install vlc audacity filezilla btop
+apt install vlc audacity btop -y
 
 #Steam
 wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
@@ -21,7 +21,7 @@ apt install ./steam.deb -y
 
 ### Nala ###
 # Install Nala
-apt install nala
+apt install nala -y
 
 # Config Nala
 echo 'apt() {'  >> .bashrc

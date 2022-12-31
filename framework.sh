@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install Fingerprint Reader
-apt install fprintd libpam-fprintd
+apt install fprintd libpam-fprintd -y
 
 clear
 echo Please tic the box that says Fingerprint authentication Then exit
