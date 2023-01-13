@@ -19,7 +19,7 @@ read -p 'y, or n: ' gnomeapps
 
 if [ $gnomeapps == 'y' ]
   then
-  apt purge -y gnome-2048 gnome-games gnome-sudoku gnome-sushi gnome-chess gnome-contacts gnome-mahjongg gnome-mines gnome-maps gnome-nibbles gnome-online-miners gnome-documents swell-foop shotwell gnome-klotski gnome-robots gnome-taquin hitori five-or-more four-in-a-row aisleriot lightsoff quadrapassel tali gnome-tetravex
+  apt purge gnome-2048 gnome-games gnome-sudoku gnome-sushi gnome-chess gnome-contacts gnome-mahjongg gnome-mines gnome-maps gnome-nibbles gnome-online-miners gnome-documents swell-foop shotwell gnome-klotski gnome-robots gnome-taquin hitori five-or-more four-in-a-row aisleriot lightsoff quadrapassel tali gnome-tetravex -y
 fi
 
 apt update -y

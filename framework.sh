@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install Fingerprint Reader
-apt install fprintd libpam-fprintd -y
+apt install fprintd libpam-fprintd powertop intel-media-va-driver intel-gpu-tools -y
 
 clear
 echo Please tic the box that says Fingerprint authentication Then exit
@@ -20,14 +20,10 @@ sudo update-grub
 #Scaling
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
-#Tap to Click
-gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-
-# Power Settings
-apt install powertop intel-media-va-driver intel-gpu-tools -y
-
+#Power Settings
 powertop --auto-tune
 
-sudo systemctl enable powertop
+systemctl start powertop
+systemctl enable powertop
 
 echo PCIE_ASPM_ON_BAT=powersupersave >> /etc/tlp.conf
