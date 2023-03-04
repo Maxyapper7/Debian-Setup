@@ -51,3 +51,10 @@ cp gnome-dotfiles/nautilus ~/.config
 cp gnome-dotfiles/neofetch ~/.config
 cp gnome-dotfiles/variety ~/.config
 cp gnome-dotfiles/btop ~/.config
+cp gnome-dotfiles/fish ~/.config
+
+# Installs Fish Shell
+echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_10/ /' | sudo tee /etc/apt/sources.list.d/shells:fish.list
+curl -fsSL https://download.opensuse.org/repositories/shells:fish/Debian_10/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish.gpg > /dev/null
+apt update
+apt install fish
