@@ -7,10 +7,12 @@ apt upgrade -y
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+apt update -y
+
 # Install apps
 flatpak install -y flathub org.polymc.PolyMC net.davidotek.pupgui2 org.onlyoffice.desktopeditors com.mattjakeman.ExtensionManager com.obsproject.Studio io.github.shiftey.Desktop com.discordapp.Discord com.valvesoftware.Steam
 
-apt install vlc audacity btop gimp -y
+apt install vlc audacity btop gimp curl -y
 
 #Chrome
 
@@ -51,6 +53,7 @@ cp gnome-dotfiles/nautilus ~/.config
 cp gnome-dotfiles/neofetch ~/.config
 cp gnome-dotfiles/variety ~/.config
 cp gnome-dotfiles/btop ~/.config
+<<<<<<< Updated upstream
 cp gnome-dotfiles/fish ~/.config
 
 # Installs Fish Shell
@@ -58,3 +61,9 @@ echo 'deb http://download.opensuse.org/repositories/shells:/fish/Debian_10/ /' |
 curl -fsSL https://download.opensuse.org/repositories/shells:fish/Debian_10/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_fish.gpg > /dev/null
 apt update
 apt install fish
+=======
+
+# Install ZSH
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+>>>>>>> Stashed changes
