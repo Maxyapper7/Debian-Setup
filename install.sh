@@ -19,7 +19,7 @@ read -p 'y, or n: ' gnomeapps
 
 if [ $gnomeapps == 'y' ]
   then
-  apt purge gnome-2048 gnome-games gnome-sudoku gnome-sushi gnome-chess gnome-contacts gnome-mahjongg gnome-mines gnome-maps gnome-nibbles gnome-online-miners gnome-documents swell-foop shotwell gnome-klotski gnome-robots gnome-taquin hitori five-or-more four-in-a-row aisleriot lightsoff quadrapassel tali gnome-tetravex -y
+  apt purge aisleriot baobab cheese eog evince evolution file-roller firefox-esr five-or-more four-in-a-row gedit gnome-2048 gnome-calculator gnome-calendar gnome-characters gnome-chess gnome-clocks gnome-color-manager gnome-contacts gnome-disk-utility gnome-documents gnome-font-viewer gnome-klotski gnome-logs gnome-mahjongg gnome-maps gnome-mines gnome-music gnome-nibbles gnome-robots gnome-screenshot gnome-software gnome-sound-recorder gnome-shell-extension-prefs gnome-sudoku gnome-system-monitor gnome-taquin gnome-tetravex gnome-todo gnome-tweaks gnome-weather hitori iagno im-config libreoffice-calc libreoffice-common libreoffice-draw libreoffice-impress libreoffice-writer lightsoff malcontent nautilus quadrapassel rhythmbox seahorse shotwell simple-scan software-properties-gtk swell-foop synaptic tali totem transmission-gtk yelp 
 fi
 
 apt update -y
